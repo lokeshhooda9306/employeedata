@@ -24,7 +24,7 @@ def delete(request,my_id):
     return HttpResponseRedirect('/index')
 
 def update(request,my_id):
-    showdb = hooda.objects.get(id=my_id)
+    showdb = hooda.objects.get(pk=my_id)
     form = hoodareg(request.POST, instance=showdb)
 
     if form.is_valid():
@@ -35,6 +35,8 @@ def update(request,my_id):
 
     else:
         pass
+        
+        
 
 
     return render (request,'update.html',{"form": form,"showdb":showdb})
