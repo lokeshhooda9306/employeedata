@@ -18,14 +18,27 @@ def index(request):
             reg.save()
     return render(request, "index.html", {'form':fm, 'dt':showdata})
 
+def delete(request,my_id):
+    showdb = hooda.objects.get(id=my_id).delete()
+
+    return HttpResponseRedirect('/index')
+
 def update(request,my_id):
-    showdb = hooda.objects.get(pk=my_id)
+    showdb = hooda.objects.get(id=my_id)
     form = hoodareg(request.POST, instance=showdb)
 
     if form.is_valid():
+        showdb= form.save(commit= False)
         showdb = form.save()
 
-        return HttpResponseRedirect('/index/')
+        return HttpResponseRedirect('/index')
+
+    else:
+        pass
+
+
+    return render (request,'update.html',{"form": form,"showdb":showdb})
+
 
 
 

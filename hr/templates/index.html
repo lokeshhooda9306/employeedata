@@ -23,7 +23,8 @@
     {{d.rollno}}<br> <br>
     {{d.mobile_no}}<br> <br>
     {{d.email}}<br> <br>
-        <a href=" {% url 'update' d.id %} "> update click</a>
+    <a href=" {% url 'delete' d.id %} "> delete click</a>
+    <a href=" {% url 'update' d.id %} "> update click</a>
 
     
     {% endfor %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">name</label>
+        <input type="text" name="name" id="" value={{showdb.name}}>
+        <label for="">rollno</label>
+        <input type="number" name="rollno" id="" value ={{showdb.rollno}}>
+        <label for="">phone_no</label>
+        <input type="number" name="phone_no" id=""value ={{showdb.mobile_no}}>
+        <label for="">email</label>
+        <input type="email" name="email" id=""value={{showdb.email}}>
+        
+
+        <input type="submit" value="save">
+
+
+    </form>
+</body>
+</html>
