@@ -7,5 +7,5 @@ class hooda(models.Model):
     mobile_no = models.IntegerField()
     email = models.EmailField()
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
